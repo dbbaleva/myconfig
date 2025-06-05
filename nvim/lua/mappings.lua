@@ -1,22 +1,24 @@
 require "nvchad.mappings"
 
--- unset keymaps
-vim.keymap.del("n", "<leader>b")
-vim.keymap.del("n", "<leader>x")
-
 local map = vim.keymap.set
-local snacks = require "snacks"
-
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
-if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() snacks.lazygit() end, { desc = "Open lazygit" })
-end
+if pcall(require, "snacks") then
+  local snacks = require "snacks"
+  -- unset keymaps
+  vim.keymap.del("n", "<leader>b")
+  vim.keymap.del("n", "<leader>x")
 
-map("n", "<leader>bd", function()
-  snacks.bufdelete()
-end, { desc = "Delete Buffer" })
-map("n", "<leader>bo", function()
-  snacks.bufdelete.other()
-end, { desc = "Delete Other Buffers" })
+  if vim.fn.executable "lazygit" == 1 then
+    map("n", "<leader>gg", function()
+      snacks.lazygit()
+    end, { desc = "Open lazygit" })
+  end
+  map("n", "<leader>bd", function()
+    snacks.bufdelete()
+  end, { desc = "Delete Buffer" })
+  map("n", "<leader>bo", function()
+    snacks.bufdelete.other()
+  end, { desc = "Delete Other Buffers" })
+end

@@ -22,7 +22,9 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    opts = require "configs.cmp",
+    opts = function() 
+      return require "configs.cmp"
+    end
   },
 
   {
@@ -50,10 +52,17 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     event = "BufEnter",
     opts = require "configs.context",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 
   {
     "folke/snacks.nvim",
     opts = require "configs.snacks",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
   }
 }
