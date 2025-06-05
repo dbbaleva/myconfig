@@ -1,9 +1,17 @@
 local options = {
   formatters_by_ft = {
-    lua = { "stylua" },
-    css = { "prettier" },
+    csharp = { "csharpier" },
+    css = { "biome" },
+    elixir = { "mix" },
     html = { "prettier" },
-    vue = { "biome", "prettier" }
+    javascript = { "biome" },
+    json = { "biome" },
+    lua = { "stylua" },
+    markdown = { "prettier" },
+    python = { "isort", "black" },
+    typescript = { "biome" },
+    vue = { "biome" },
+    yaml = { "prettier" },
   },
 
   -- format_on_save = {
