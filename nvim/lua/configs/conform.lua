@@ -10,7 +10,7 @@ local options = {
     markdown = { "prettier" },
     python = { "isort", "black" },
     typescript = { "biome" },
-    vue = { "biome" },
+    vue = { "biome", "prettier" },
     yaml = { "prettier" },
   },
 

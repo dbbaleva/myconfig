@@ -22,7 +22,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    opts = function() 
+    opts = function()
       return require "configs.cmp"
     end
   },
@@ -45,7 +45,7 @@ return {
         disable_keymaps = false,
       })
     end,
-    lazy = false, -- or true if you want to lazy load
+    lazy = false,
   },
 
   {
