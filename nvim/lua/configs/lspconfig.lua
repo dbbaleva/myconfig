@@ -11,9 +11,11 @@ local servers = {
   "jsonls",
   "lua_ls",
   "pyright",
+  "rust_analyzer",
   "tailwindcss",
   "ts_ls",
   "vue_ls",
+  "zls",
 }
 vim.lsp.enable(servers)
 

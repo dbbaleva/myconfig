@@ -9,9 +9,11 @@ local options = {
     lua = { "stylua" },
     markdown = { "prettier" },
     python = { "isort", "black" },
+    rust = { "rustfmt" },
     typescript = { "biome" },
     vue = { "biome", "prettier" },
     yaml = { "prettier" },
+    zig = { "zig" },
   },
 
   -- format_on_save = {
